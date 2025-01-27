@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_movie_list_bloc.dart';
+part of 'add_rating_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,21 +15,22 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$GetMovieListEvent {
-  int get pageNo => throw _privateConstructorUsedError;
+mixin _$AddRatingEvent {
+  int get movieId => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageNo) fetch,
+    required TResult Function(int movieId, double value) fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageNo)? fetch,
+    TResult? Function(int movieId, double value)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageNo)? fetch,
+    TResult Function(int movieId, double value)? fetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,23 +52,23 @@ mixin _$GetMovieListEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetMovieListEventCopyWith<GetMovieListEvent> get copyWith =>
+  $AddRatingEventCopyWith<AddRatingEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetMovieListEventCopyWith<$Res> {
-  factory $GetMovieListEventCopyWith(
-          GetMovieListEvent value, $Res Function(GetMovieListEvent) then) =
-      _$GetMovieListEventCopyWithImpl<$Res, GetMovieListEvent>;
+abstract class $AddRatingEventCopyWith<$Res> {
+  factory $AddRatingEventCopyWith(
+          AddRatingEvent value, $Res Function(AddRatingEvent) then) =
+      _$AddRatingEventCopyWithImpl<$Res, AddRatingEvent>;
   @useResult
-  $Res call({int pageNo});
+  $Res call({int movieId, double value});
 }
 
 /// @nodoc
-class _$GetMovieListEventCopyWithImpl<$Res, $Val extends GetMovieListEvent>
-    implements $GetMovieListEventCopyWith<$Res> {
-  _$GetMovieListEventCopyWithImpl(this._value, this._then);
+class _$AddRatingEventCopyWithImpl<$Res, $Val extends AddRatingEvent>
+    implements $AddRatingEventCopyWith<$Res> {
+  _$AddRatingEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,31 +78,36 @@ class _$GetMovieListEventCopyWithImpl<$Res, $Val extends GetMovieListEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pageNo = null,
+    Object? movieId = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      pageNo: null == pageNo
-          ? _value.pageNo
-          : pageNo // ignore: cast_nullable_to_non_nullable
+      movieId: null == movieId
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
               as int,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$FetchImplCopyWith<$Res>
-    implements $GetMovieListEventCopyWith<$Res> {
+    implements $AddRatingEventCopyWith<$Res> {
   factory _$$FetchImplCopyWith(
           _$FetchImpl value, $Res Function(_$FetchImpl) then) =
       __$$FetchImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int pageNo});
+  $Res call({int movieId, double value});
 }
 
 /// @nodoc
 class __$$FetchImplCopyWithImpl<$Res>
-    extends _$GetMovieListEventCopyWithImpl<$Res, _$FetchImpl>
+    extends _$AddRatingEventCopyWithImpl<$Res, _$FetchImpl>
     implements _$$FetchImplCopyWith<$Res> {
   __$$FetchImplCopyWithImpl(
       _$FetchImpl _value, $Res Function(_$FetchImpl) _then)
@@ -110,13 +116,18 @@ class __$$FetchImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pageNo = null,
+    Object? movieId = null,
+    Object? value = null,
   }) {
     return _then(_$FetchImpl(
-      pageNo: null == pageNo
-          ? _value.pageNo
-          : pageNo // ignore: cast_nullable_to_non_nullable
+      movieId: null == movieId
+          ? _value.movieId
+          : movieId // ignore: cast_nullable_to_non_nullable
               as int,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -124,14 +135,16 @@ class __$$FetchImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchImpl implements _Fetch {
-  const _$FetchImpl({required this.pageNo});
+  const _$FetchImpl({required this.movieId, required this.value});
 
   @override
-  final int pageNo;
+  final int movieId;
+  @override
+  final double value;
 
   @override
   String toString() {
-    return 'GetMovieListEvent.fetch(pageNo: $pageNo)';
+    return 'AddRatingEvent.fetch(movieId: $movieId, value: $value)';
   }
 
   @override
@@ -139,11 +152,12 @@ class _$FetchImpl implements _Fetch {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchImpl &&
-            (identical(other.pageNo, pageNo) || other.pageNo == pageNo));
+            (identical(other.movieId, movieId) || other.movieId == movieId) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageNo);
+  int get hashCode => Object.hash(runtimeType, movieId, value);
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +168,27 @@ class _$FetchImpl implements _Fetch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageNo) fetch,
+    required TResult Function(int movieId, double value) fetch,
   }) {
-    return fetch(pageNo);
+    return fetch(movieId, value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageNo)? fetch,
+    TResult? Function(int movieId, double value)? fetch,
   }) {
-    return fetch?.call(pageNo);
+    return fetch?.call(movieId, value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageNo)? fetch,
+    TResult Function(int movieId, double value)? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
-      return fetch(pageNo);
+      return fetch(movieId, value);
     }
     return orElse();
   }
@@ -208,11 +222,14 @@ class _$FetchImpl implements _Fetch {
   }
 }
 
-abstract class _Fetch implements GetMovieListEvent {
-  const factory _Fetch({required final int pageNo}) = _$FetchImpl;
+abstract class _Fetch implements AddRatingEvent {
+  const factory _Fetch(
+      {required final int movieId, required final double value}) = _$FetchImpl;
 
   @override
-  int get pageNo;
+  int get movieId;
+  @override
+  double get value;
   @override
   @JsonKey(ignore: true)
   _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
@@ -220,13 +237,13 @@ abstract class _Fetch implements GetMovieListEvent {
 }
 
 /// @nodoc
-mixin _$GetMovieListState {
+mixin _$AddRatingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String error) failed,
-    required TResult Function(MovieListResponse response) success,
+    required TResult Function(AddSuccessResponse response) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -234,7 +251,7 @@ mixin _$GetMovieListState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String error)? failed,
-    TResult? Function(MovieListResponse response)? success,
+    TResult? Function(AddSuccessResponse response)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,7 +259,7 @@ mixin _$GetMovieListState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String error)? failed,
-    TResult Function(MovieListResponse response)? success,
+    TResult Function(AddSuccessResponse response)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -274,16 +291,16 @@ mixin _$GetMovieListState {
 }
 
 /// @nodoc
-abstract class $GetMovieListStateCopyWith<$Res> {
-  factory $GetMovieListStateCopyWith(
-          GetMovieListState value, $Res Function(GetMovieListState) then) =
-      _$GetMovieListStateCopyWithImpl<$Res, GetMovieListState>;
+abstract class $AddRatingStateCopyWith<$Res> {
+  factory $AddRatingStateCopyWith(
+          AddRatingState value, $Res Function(AddRatingState) then) =
+      _$AddRatingStateCopyWithImpl<$Res, AddRatingState>;
 }
 
 /// @nodoc
-class _$GetMovieListStateCopyWithImpl<$Res, $Val extends GetMovieListState>
-    implements $GetMovieListStateCopyWith<$Res> {
-  _$GetMovieListStateCopyWithImpl(this._value, this._then);
+class _$AddRatingStateCopyWithImpl<$Res, $Val extends AddRatingState>
+    implements $AddRatingStateCopyWith<$Res> {
+  _$AddRatingStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -300,7 +317,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$GetMovieListStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AddRatingStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -314,7 +331,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'GetMovieListState.initial()';
+    return 'AddRatingState.initial()';
   }
 
   @override
@@ -332,7 +349,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String error) failed,
-    required TResult Function(MovieListResponse response) success,
+    required TResult Function(AddSuccessResponse response) success,
   }) {
     return initial();
   }
@@ -343,7 +360,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String error)? failed,
-    TResult? Function(MovieListResponse response)? success,
+    TResult? Function(AddSuccessResponse response)? success,
   }) {
     return initial?.call();
   }
@@ -354,7 +371,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String error)? failed,
-    TResult Function(MovieListResponse response)? success,
+    TResult Function(AddSuccessResponse response)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -401,7 +418,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements GetMovieListState {
+abstract class _Initial implements AddRatingState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -414,7 +431,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$GetMovieListStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$AddRatingStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -428,7 +445,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'GetMovieListState.loading()';
+    return 'AddRatingState.loading()';
   }
 
   @override
@@ -446,7 +463,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String error) failed,
-    required TResult Function(MovieListResponse response) success,
+    required TResult Function(AddSuccessResponse response) success,
   }) {
     return loading();
   }
@@ -457,7 +474,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String error)? failed,
-    TResult? Function(MovieListResponse response)? success,
+    TResult? Function(AddSuccessResponse response)? success,
   }) {
     return loading?.call();
   }
@@ -468,7 +485,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String error)? failed,
-    TResult Function(MovieListResponse response)? success,
+    TResult Function(AddSuccessResponse response)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -515,7 +532,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements GetMovieListState {
+abstract class _Loading implements AddRatingState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -530,7 +547,7 @@ abstract class _$$FailedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailedImplCopyWithImpl<$Res>
-    extends _$GetMovieListStateCopyWithImpl<$Res, _$FailedImpl>
+    extends _$AddRatingStateCopyWithImpl<$Res, _$FailedImpl>
     implements _$$FailedImplCopyWith<$Res> {
   __$$FailedImplCopyWithImpl(
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
@@ -560,7 +577,7 @@ class _$FailedImpl implements _Failed {
 
   @override
   String toString() {
-    return 'GetMovieListState.failed(error: $error)';
+    return 'AddRatingState.failed(error: $error)';
   }
 
   @override
@@ -586,7 +603,7 @@ class _$FailedImpl implements _Failed {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String error) failed,
-    required TResult Function(MovieListResponse response) success,
+    required TResult Function(AddSuccessResponse response) success,
   }) {
     return failed(error);
   }
@@ -597,7 +614,7 @@ class _$FailedImpl implements _Failed {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String error)? failed,
-    TResult? Function(MovieListResponse response)? success,
+    TResult? Function(AddSuccessResponse response)? success,
   }) {
     return failed?.call(error);
   }
@@ -608,7 +625,7 @@ class _$FailedImpl implements _Failed {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String error)? failed,
-    TResult Function(MovieListResponse response)? success,
+    TResult Function(AddSuccessResponse response)? success,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -655,7 +672,7 @@ class _$FailedImpl implements _Failed {
   }
 }
 
-abstract class _Failed implements GetMovieListState {
+abstract class _Failed implements AddRatingState {
   const factory _Failed({required final String error}) = _$FailedImpl;
 
   String get error;
@@ -670,14 +687,14 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({MovieListResponse response});
+  $Res call({AddSuccessResponse response});
 
-  $MovieListResponseCopyWith<$Res> get response;
+  $AddSuccessResponseCopyWith<$Res> get response;
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$GetMovieListStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$AddRatingStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -692,14 +709,14 @@ class __$$SuccessImplCopyWithImpl<$Res>
       response: null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as MovieListResponse,
+              as AddSuccessResponse,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MovieListResponseCopyWith<$Res> get response {
-    return $MovieListResponseCopyWith<$Res>(_value.response, (value) {
+  $AddSuccessResponseCopyWith<$Res> get response {
+    return $AddSuccessResponseCopyWith<$Res>(_value.response, (value) {
       return _then(_value.copyWith(response: value));
     });
   }
@@ -711,11 +728,11 @@ class _$SuccessImpl implements _Success {
   const _$SuccessImpl({required this.response});
 
   @override
-  final MovieListResponse response;
+  final AddSuccessResponse response;
 
   @override
   String toString() {
-    return 'GetMovieListState.success(response: $response)';
+    return 'AddRatingState.success(response: $response)';
   }
 
   @override
@@ -742,7 +759,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String error) failed,
-    required TResult Function(MovieListResponse response) success,
+    required TResult Function(AddSuccessResponse response) success,
   }) {
     return success(response);
   }
@@ -753,7 +770,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String error)? failed,
-    TResult? Function(MovieListResponse response)? success,
+    TResult? Function(AddSuccessResponse response)? success,
   }) {
     return success?.call(response);
   }
@@ -764,7 +781,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String error)? failed,
-    TResult Function(MovieListResponse response)? success,
+    TResult Function(AddSuccessResponse response)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -811,11 +828,11 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements GetMovieListState {
-  const factory _Success({required final MovieListResponse response}) =
+abstract class _Success implements AddRatingState {
+  const factory _Success({required final AddSuccessResponse response}) =
       _$SuccessImpl;
 
-  MovieListResponse get response;
+  AddSuccessResponse get response;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

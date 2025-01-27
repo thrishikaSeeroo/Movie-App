@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen>
       backgroundColor: theme.primaryColor,
       body: Center(
         child: ScaleTransition(
-          scale: _animation,  // Use the animation for scaling effect
+          scale: _animation, // Use the animation for scaling effect
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

@@ -9,7 +9,7 @@ class MovieListUseCase {
 
   MovieListUseCase(this.movieRepository);
 
-  Future<Either<String, MovieListResponse>> execute() {
-    return movieRepository.getMovieList();
+  Future<Either<String, MovieListResponse>> execute({required int pageNo}) {
+    return movieRepository.getMovieList(pageNo: pageNo);
   }
 }

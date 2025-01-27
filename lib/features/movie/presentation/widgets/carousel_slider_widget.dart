@@ -10,7 +10,6 @@ class CarouselSliderWidget extends StatefulWidget {
 }
 
 class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
-
   final List<String> imgList = [
     'assets/images/panther_image.jpg',
     'assets/images/shadow_image.jpg',
@@ -26,20 +25,19 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
           items: imgList!.map((imageUrl) {
             return LayoutBuilder(
               builder: (BuildContext context, constraints) {
-                return Expanded(
-                  child: Container(
-                    width: constraints.maxWidth,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(6.0),
-                      child: Image.asset(
-                        imageUrl,
-                        height: 60,
-                        width: double.infinity, // Fills the width of the parent
-                        fit: BoxFit.cover,),
+                return Container(
+                  width: constraints.maxWidth,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.0),
+                    child: Image.asset(
+                      imageUrl,
+                      height: 60,
+                      width: double.infinity, // Fills the width of the parent
+                      fit: BoxFit.cover,
                     ),
                   ),
                 );
